@@ -13,7 +13,7 @@ const SCRCPY_ARGS: &[&str] = &[
 
 fn main() {
     let mut monitor = udev::MonitorBuilder::new().unwrap()
-        // .match_subsystem("usb").unwrap()
+        .match_subsystem("usb").unwrap()
         .listen()
         .unwrap();
 
