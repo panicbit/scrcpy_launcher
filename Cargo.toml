@@ -8,3 +8,4 @@ edition = "2018"
 
 [dependencies]
 udev = "0.4.0"
+mio = { version = "0.7.0", features = ["os-poll", "os-util"] }
