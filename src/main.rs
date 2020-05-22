@@ -32,9 +32,9 @@ fn main() {
     ).unwrap();
 
     loop {
-        poll.poll(&mut events, None).unwrap();
-        
-        eprintln!("Incoming events!");
+        if let Err(err) = poll.poll(&mut events, None) {
+            println!("poll error: {}", err);
+        }
 
         for event in &mut monitor {
             let properties = event
